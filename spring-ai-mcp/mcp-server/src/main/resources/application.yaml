@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: mcp-server
+
+  ai:
+    mcp:
+      server:
+        name: demo-mcp-server
+        version: 1.0.0
+        type: SYNC
+        protocol: STREAMABLE
+        streamable-http:
+          mcp-endpoint: /mcp
+
+server:
+  port: 8082

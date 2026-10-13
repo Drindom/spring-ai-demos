@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: spring-ai-rag
+
+  ai:
+    model:
+      chat: openai
+      embedding: openai
+      image: none
+      moderation: none
+      audio:
+        speech: none
+        transcription: none
+
+    openai:
+      chat:
+#        base-url: https://api.deepseek.com
+#        api-key: ${DEEPSEEK_API_KEY}
+#        model: deepseek-v4-flash
+        base-url: http://localhost:8888/v1
+        api-key: ""
+        model: nanbeige4.2-3b
+#        model: lfm2.5-2.6b
+#        model: qwen3-7b
+
+      embedding:
+        base-url: http://localhost:8888/v1
+        api-key: ""
+        model: qwen3-embedding-0.6b
+
+    vectorstore:
+      type: redis
+      redis:
+        initialize-schema: true
+        index-name: spring-ai-rag-index
+        prefix: "spring-ai:rag:"
+
+  data:
+    redis:
+      client-type: jedis
+      host: localhost
+      port: 6379
+
+server:
+  port: 8081

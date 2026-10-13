@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: spring-ai-evaluation
+
+  ai:
+    model:
+      chat: openai
+      embedding: none
+      image: none
+      moderation: none
+      audio:
+        speech: none
+        transcription: none
+
+    openai:
+      chat:
+        #        base-url: https://api.deepseek.com
+        #        api-key: ${DEEPSEEK_API_KEY}
+        #        model: deepseek-v4-flash
+        base-url: http://localhost:8888/v1
+        api-key: ""
+        model: nanbeige4.2-3b
+      #        model: lfm2.5-2.6b
+      #        model: qwen3-7b
+
+server:
+  port: 8084
